@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 // import PropTypes from 'prop-types'
 
 export class Navbar extends Component {
@@ -9,9 +10,9 @@ export class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              News Monkey
-            </a>
+            <Link className="navbar-brand" to="/">
+              <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= "https://files.oaiusercontent.com/file-OxPeQglBcelmhyyr3s90RrBf?se=2024-11-06T09%3A26%3A00Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D328bc57b-745b-4b9d-9255-ee8de76f6a72.webp&sig=7Mzaw850fXVajKImOi%2BXP%2BNJjJU4CANZqYhhb0ChU0Y%3D" alt="err" srcset="" />
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -29,14 +30,39 @@ export class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
+                  <Link className="nav-link" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="/">
-                    About
-                  </a>
+                  <Link className="nav-link" to="/business">
+                    Business
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/entertainment">
+                    Entertainment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/health">
+                    Health
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/sports">
+                    Sports
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/technology">
+                    Technology
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/science">
+                    Science
+                  </Link>
                 </li>
               </ul>
               <form className="d-flex" role="search">
