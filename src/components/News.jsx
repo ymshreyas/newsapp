@@ -22,6 +22,7 @@ export class News extends Component {
       totalResults: parsedData.totalResults,
       load: false,
     });
+    console.log(this.state.page)
   }
   async componentDidMount() {
     this.updatenews()
@@ -53,6 +54,9 @@ export class News extends Component {
                     description={element.description ? element.description : ""}
                     imageUrl={element.urlToImage}
                     newsUrl={element.url}
+                    author={element.author}
+                    date={element.publishedAt}
+                    source={element.source.name}
                   />
                 </div>
               );
