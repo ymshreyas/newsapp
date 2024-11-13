@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import news_monkey from './news_monkey.jpg'
 import { Link } from "react-router-dom";
 // import PropTypes from 'prop-types'
 
@@ -8,10 +9,10 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= "https://files.oaiusercontent.com/file-OxPeQglBcelmhyyr3s90RrBf?se=2024-11-06T09%3A26%3A00Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D328bc57b-745b-4b9d-9255-ee8de76f6a72.webp&sig=7Mzaw850fXVajKImOi%2BXP%2BNJjJU4CANZqYhhb0ChU0Y%3D" alt="err" srcset="" />
+              <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= {news_monkey} alt="err" srcset="" />
             </Link>
             <button
               className="navbar-toggler"

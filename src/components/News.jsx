@@ -41,7 +41,7 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3 ">
-        <h2 className="text-center">News Monkey Top Headlines</h2>
+        <h2 className="text-center">News Monkey Top Headlines on <span style={{color:'#172499'}}>{this.props.category}</span></h2>
         {this.state.load && <Spinner />}
         <div className="row">
           {!this.state.load &&
@@ -53,6 +53,9 @@ export class News extends Component {
                     description={element.description ? element.description : ""}
                     imageUrl={element.urlToImage}
                     newsUrl={element.url}
+                    author={element.author}
+                    time={element.publishedAt}
+                    name={element.source.name}
                   />
                 </div>
               );
