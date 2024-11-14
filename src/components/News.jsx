@@ -15,7 +15,7 @@ export class News extends Component {
     };
   }
   async updatenews() {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=9d9770c505784d01a8200e1ad2032571&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ load: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -29,8 +29,8 @@ export class News extends Component {
     this.updatenews()
   }
   fetchMoreData = async () => {
+    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
     this.setState({page: this.state.page + 1})
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
@@ -42,7 +42,7 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h2 className="text-center my-4">News Monkey Top <span style={{color:'#172499'}}>{this.props.category}</span> Headlines</h2>
+        <h2 className="text-center" style={{margin:'35px 0px', marginTop:'90px'}}>News Monkey Top <span style={{color:'#172499'}}>{this.props.category}</span> Headlines</h2>
         {this.state.load&&<Spinner/>}
         <InfiniteScroll
           dataLength={this.state.articles.length}
