@@ -39,10 +39,13 @@ export class News extends Component {
       load: false,
     });
   };
+  capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+  }
   render() {
     return (
       <>
-        <h2 className="text-center" style={{margin:'35px 0px', marginTop:'90px'}}>News Monkey Top <span style={{color:'#172499'}}>{this.props.category}</span> Headlines</h2>
+        <h2 className="text-center" style={{margin:'35px 0px', marginTop:'90px', color:this.props.mode}}>News Monkey Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h2>
         {this.state.load&&<Spinner/>}
         <InfiniteScroll
           dataLength={this.state.articles.length}
@@ -62,6 +65,7 @@ export class News extends Component {
                     newsUrl={element.url}
                     author={element.author}
                     time={element.publishedAt}
+                    mode={this.props.mode}
                   />
                 </div>
               );

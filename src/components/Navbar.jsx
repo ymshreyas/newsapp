@@ -9,7 +9,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav className={`navbar fixed-top navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= {news_monkey} alt="err" srcset="" />
@@ -66,17 +66,10 @@ export class Navbar extends Component {
                   </Link>
                 </li>
               </ul>
-              <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
+              <div class={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'}`}>
+                <input onClick={this.props.toggleMode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Enable Dark Mode</label>
+              </div>
             </div>
           </div>
         </nav>
