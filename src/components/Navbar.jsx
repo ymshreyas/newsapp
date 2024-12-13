@@ -36,6 +36,11 @@ export class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/general">
+                    General
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/business">
                     Business
                   </Link>
@@ -67,7 +72,7 @@ export class Navbar extends Component {
                 </li>
               </ul>
               <div class={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'}`}>
-                <input onClick={this.props.toggleMode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
+                <input checked={this.props.mode === "dark"} onClick={this.props.toggleMode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
                 <label class="form-check-label" for="flexSwitchCheckChecked">Enable Dark Mode</label>
               </div>
             </div>
