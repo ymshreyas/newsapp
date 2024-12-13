@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import news_monkey from './news_monkey.jpg'
 import { Link } from "react-router-dom";
+// import PropTypes from 'prop-types'
 
 export class Navbar extends Component {
+  static propTypes = {};
+
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <nav className={`navbar fixed-top navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= {news_monkey} alt="err" srcset="" />
-=======
-        <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-          <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
-              <img style={{width:'40px',height:'40px', borderRadius:'5px'}} src= "https://files.oaiusercontent.com/file-OxPeQglBcelmhyyr3s90RrBf?se=2024-11-06T09%3A26%3A00Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D328bc57b-745b-4b9d-9255-ee8de76f6a72.webp&sig=7Mzaw850fXVajKImOi%2BXP%2BNJjJU4CANZqYhhb0ChU0Y%3D" alt="err" />
->>>>>>> master
             </Link>
             <button
               className="navbar-toggler"
@@ -76,7 +72,7 @@ export class Navbar extends Component {
                 </li>
               </ul>
               <div class={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'}`}>
-                <input checked={this.props.mode === "dark"} onClick={this.props.toggleMode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
+                <input onClick={this.props.toggleMode} class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"/>
                 <label class="form-check-label" for="flexSwitchCheckChecked">Enable Dark Mode</label>
               </div>
             </div>
